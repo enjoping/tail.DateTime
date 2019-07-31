@@ -1065,7 +1065,7 @@
                 // Calc Disabled
                 if(this.con.dateBlacklist && ((time) < this.con.dateStart || time > this.con.dateEnd)){
                     disabled = [(time < this.con.dateStart)? this.con.dateStart: Infinity, [0, 1, 2, 3, 4, 5, 6], true];
-                } else if(disabled[0] == 0){
+                } else if(disabled[0] <= time){
                     ranges = ranges.filter(function(obj){
                         if(obj.start == Infinity || (time >= obj.start && time <= obj.end)){
                             disabled = [obj.end, obj.days];
